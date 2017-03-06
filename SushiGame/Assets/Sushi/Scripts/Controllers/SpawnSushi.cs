@@ -26,13 +26,13 @@ public class SpawnSushi : MonoBehaviour {
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
-
 			}
 			// Update is called once per frame
 			public void SushiAUp () {
 
 				if(SushiA != null){
 					if(counter <= 0){
+						Debug.Log ("SushiA time 0 ");
 						GameObject sushi = Instantiate (SushiA[0],SushiPos.position,SushiPos.rotation);
 						sushi.name = SushiA [0].name;
 						Debug.Log (sushi.name);
@@ -45,6 +45,7 @@ public class SpawnSushi : MonoBehaviour {
 
 				if(SushiA != null){
 					if (counterb <= 0) {
+						Debug.Log ("SushiB time 0 ");
 						GameObject sushi = Instantiate (SushiA[1], SushiPos.position, SushiPos.rotation);
 						sushi.name = SushiA [1].name;
 						Debug.Log (sushi.name);
@@ -57,6 +58,7 @@ public class SpawnSushi : MonoBehaviour {
 
 				if (SushiA != null) {
 					if (counterC <= 0) {
+						Debug.Log ("SushiC time 0 ");
 						GameObject sushi = Instantiate (SushiA[2], SushiPos.position, SushiPos.rotation);
 						sushi.name = SushiA [2].name;
 						Debug.Log (sushi.name);
@@ -69,6 +71,7 @@ public class SpawnSushi : MonoBehaviour {
 
 				if (SushiA != null) {
 					if (counterD <= 0) {
+						Debug.Log ("SushiD time 0 ");
 						GameObject sushi = Instantiate (SushiA[3], SushiPos.position, SushiPos.rotation);
 						sushi.name = SushiA [3].name;
 						Debug.Log (sushi.name);
@@ -81,6 +84,7 @@ public class SpawnSushi : MonoBehaviour {
 
 				if (SushiA != null) {
 					if (counterE <= 0) {
+						Debug.Log ("SushiE time 0 ");
 						GameObject sushi = Instantiate (SushiA[4], SushiPos.position, SushiPos.rotation);
 						sushi.name = SushiA [4].name;
 						Debug.Log (sushi.name);

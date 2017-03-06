@@ -6,28 +6,29 @@ namespace Scripts{
 	namespace Controllers{
 		public class SushiB : ControllerSushi {
 
-			public bool isDragging = false;
-
 			// Use this for initialization
 			void Start () {
 			}
 
 			// Update is called once per frame
 			void Update(){
-				if (Input.GetMouseButtonDown (0)) {
+			}
+
+			void OnMouseDown (){
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+				if (Input.GetMouseButtonDown (0) && hit.collider != null) {
+					Debug.Log (gameObject.name + " Item ");
 					Debug.Log ("mouse down");
+				} 
+			}
 
-					isDragging = true;
-					if(isDragging){
-						base.OnMouseDrag ();
-					}
-				}
+			void OnMouseUp(){
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
-				else if(Input.GetMouseButtonUp(0)){
+				if (Input.GetMouseButtonUp (0) && hit.collider != null) {
 					Debug.Log ("mouse up");
-
-					isDragging = false;
-
+					Destroy (gameObject);
 				}
 			}
 
