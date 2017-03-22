@@ -7,9 +7,16 @@ namespace Scripts{
 	namespace Controllers{
 public class SpawnSushi : MonoBehaviour {
 
-			public GameObject[] SushiA;
-			public Transform SushiPos;
+			public GameObject[] Sushia;
+			public Transform[] SushiPos;
+			private GameObject sushi;
 
+
+			public List<Transform> SushiPons;
+			public List<GameObject> SushiObj;
+			//public List<Transform> Sushipos = new List<Transform> ();
+
+			public int SushiCount = 0;
 			private float counter = 0;
 			private float counterb = 0;
 			private float counterC = 0;
@@ -18,6 +25,8 @@ public class SpawnSushi : MonoBehaviour {
 
 			// Use this for initialization
 			void Start (){
+				SushiPons = new List<Transform>();
+				SushiObj = new List<GameObject> ();
 			}
 
 			void Update(){
@@ -26,69 +35,102 @@ public class SpawnSushi : MonoBehaviour {
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
-			}
-			// Update is called once per frame
-			public void SushiAUp () {
 
-				if(SushiA != null){
-					if(counter <= 0){
-						Debug.Log ("SushiA time 0 ");
-						GameObject sushi = Instantiate (SushiA[0],SushiPos.position,SushiPos.rotation);
-						sushi.name = SushiA [0].name;
-						Debug.Log (sushi.name);
-						counter = 3;
+			}
+
+			public void ReSushiCount(){
+				SushiCount--;
+
+				for(int i = 0; i < SushiCount; i++){
+					SushiObj [i].transform.position = SushiPos [i].position;
+				}
+			}
+				
+			public void SushiAUp () {
+				
+				if(Sushia != null){
+					if(counter <= 0 && SushiCount <= 3){
+						if (SushiCount < SushiPos.Length) {
+							sushi = Instantiate (Sushia [0], SushiPos[SushiCount].transform.position, Quaternion.identity);		
+							SushiObj.Add (sushi.gameObject);
+							SushiCount++;
+							sushi.name = Sushia [0].name;
+							Debug.Log (sushi.name);
+							//Debug.Log (SushiPos [SushiCount].name);
+							counter = 0;
+						}
 					}
 				}
 			}
 
 			public void SushiBUp () {
 
-				if(SushiA != null){
-					if (counterb <= 0) {
-						Debug.Log ("SushiB time 0 ");
-						GameObject sushi = Instantiate (SushiA[1], SushiPos.position, SushiPos.rotation);
-						sushi.name = SushiA [1].name;
-						Debug.Log (sushi.name);
-						counterb = 4;
+				if(Sushia != null){
+					if (counterb <= 0 && SushiCount <= 3) {
+						//Debug.Log ("SushiB time 0 ");
+						if (SushiCount < SushiPos.Length) {
+							sushi = Instantiate (Sushia [1], SushiPos[SushiCount].transform.position, Quaternion.identity);
+							SushiObj.Add (sushi.gameObject);
+							SushiCount++;
+							sushi.name = Sushia [1].name;
+							Debug.Log (sushi.name);
+							//Debug.Log (SushiPos[SushiCount].name);
+							counterb = 4;
+						}
 					}
 				}
 			}
 
 			public void SushiCUp () {
 
-				if (SushiA != null) {
-					if (counterC <= 0) {
-						Debug.Log ("SushiC time 0 ");
-						GameObject sushi = Instantiate (SushiA[2], SushiPos.position, SushiPos.rotation);
-						sushi.name = SushiA [2].name;
-						Debug.Log (sushi.name);
-						counterC = 5;
+				if (Sushia != null) {
+					if (counterC <= 0 && SushiCount <= 3) {
+						//Debug.Log ("SushiC time 0 ");
+						if (SushiCount < SushiPos.Length) {
+							sushi = Instantiate (Sushia [2], SushiPos[SushiCount].transform.position, Quaternion.identity);
+							SushiObj.Add (sushi.gameObject);
+							SushiCount++;
+							sushi.name = Sushia [2].name;
+							Debug.Log (sushi.name);
+							//Debug.Log (SushiPos [SushiCount].name);
+							counterC = 5;
+						}
 					}
 				}
 			}
 
 			public void SushiDUp () {
 
-				if (SushiA != null) {
-					if (counterD <= 0) {
-						Debug.Log ("SushiD time 0 ");
-						GameObject sushi = Instantiate (SushiA[3], SushiPos.position, SushiPos.rotation);
-						sushi.name = SushiA [3].name;
-						Debug.Log (sushi.name);
-						counterD = 2;
+				if (Sushia != null) {
+					if (counterD <= 0 && SushiCount <= 3) {
+						//Debug.Log ("SushiD time 0 ");
+						if (SushiCount < SushiPos.Length) {
+							sushi = Instantiate (Sushia [3], SushiPos[SushiCount].transform.position, Quaternion.identity);
+							SushiObj.Add (sushi.gameObject);
+							SushiCount++;
+							sushi.name = Sushia [3].name;
+							Debug.Log (sushi.name);
+//							Debug.Log (SushiPos [SushiCount].name);
+							counterD = 2;
+						}
 					}
 				}
 			}
 
 			public void SushiEUp () {
 
-				if (SushiA != null) {
-					if (counterE <= 0) {
-						Debug.Log ("SushiE time 0 ");
-						GameObject sushi = Instantiate (SushiA[4], SushiPos.position, SushiPos.rotation);
-						sushi.name = SushiA [4].name;
-						Debug.Log (sushi.name);
-						counterE = 5;
+				if (Sushia != null) {
+					if (counterE <= 0 && SushiCount <= 3) {
+						//Debug.Log ("SushiE time 0 ");
+						if (SushiCount < SushiPos.Length) {
+							sushi = Instantiate (Sushia [4], SushiPos[SushiCount].transform.position, Quaternion.identity);
+							SushiObj.Add (sushi.gameObject);
+							SushiCount++;
+							sushi.name = Sushia [4].name;
+							Debug.Log (sushi.name);
+							Debug.Log (SushiPos [SushiCount].name);
+							counterE = 5;
+						}
 					}
 				}
 			}

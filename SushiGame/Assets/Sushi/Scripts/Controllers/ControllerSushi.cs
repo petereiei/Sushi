@@ -8,9 +8,9 @@ namespace Scripts{
 	namespace Controllers{
 		public class ControllerSushi : MonoBehaviour {
 
-			//public bool isDragging = false;
 			void Start(){				
 			}
+
 			void Updeta(){
 			}
 

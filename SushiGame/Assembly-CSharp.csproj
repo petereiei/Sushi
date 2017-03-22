@@ -49,7 +49,6 @@
      <Compile Include="Assets\Sushi\Scripts\Controllers\Controller.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\ControllerSushi.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\Customers\SpawnCustomers.cs" />
-     <Compile Include="Assets\Sushi\Scripts\Controllers\Enemys.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\Score.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SpawnSushi.cs" />
@@ -58,9 +57,6 @@
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiA.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiB.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiC.cs" />
-     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiTimeDown.cs" />
-     <Compile Include="Assets\Sushi\Scripts\Controllers\Test.cs" />
-     <Compile Include="Assets\Sushi\Scripts\Controllers\UpPoint.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\DragItem.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\SlotSushi.cs" />
      <Compile Include="Assets\Sushi\Scripts\Test\test1.cs" />
