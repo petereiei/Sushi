@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Sushi\Scripts\Controllers\Controller.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\ControllerGame.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\ControllerSushi.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\Customers\Customers.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\Customers\SpawnCustomers.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\Score.cs" />
@@ -55,10 +57,22 @@
      <Compile Include="Assets\Sushi\Scripts\Controllers\SpawnSushiB.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SpawnSushiC.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiA.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiA1.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiB.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiB2.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiC.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiC3.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiD.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiD4.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiE.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiE5.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\SushiPos.cs" />
+     <Compile Include="Assets\Sushi\Scripts\GameManager\CustomersManager.cs" />
+     <Compile Include="Assets\Sushi\Scripts\GameManager\CustomersManagerB.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\DragItem.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\SlotSushi.cs" />
+     <Compile Include="Assets\Sushi\Scripts\ItemUpgrade\ItemUp.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Test\TestPool.cs" />
      <Compile Include="Assets\Sushi\Scripts\Test\test1.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Scripts.Controllers;
+using Scripts.Controllers.Customers;
 
 namespace Scripts{
 	namespace Controllers{
 		public class SushiB : ControllerSushi {
 
 			private SpawnSushi SSushi;
-			//SpawnSushi SS;
+			private GameObject Sushi;
 
 			// Use this for initialization
 			void Start () {
-				GameObject SushiObj = GameObject.Find ("Canvas");
-				SSushi = SushiObj.GetComponent<SpawnSushi>();
+				Sushi = GameObject.Find ("Canvas");
+				SSushi = Sushi.GetComponent<SpawnSushi>();
 			}
 
 			// Update is called once per frame
@@ -42,6 +44,7 @@ namespace Scripts{
 				if (other.gameObject.tag == "SushiB") {
 					Debug.Log (" Destroy " + other.gameObject.name + " and Customers ");
 					SSushi.SushiObj.Remove (gameObject);
+					//SC.CmPos.Remove (gameObject);
 					Destroy (other.gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount ();

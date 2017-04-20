@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Scripts.Controllers;
+using Scripts.Controllers.Customers;
 
 namespace Scripts{
 	namespace Controllers{
 		public class SushiA : ControllerSushi {
 
 			private SpawnSushi SSushi;
-			//SpawnSushi SS;
+			private GameObject Sushi;
 
 			// Use this for initialization
 			void Start () {
-				GameObject SushiObj = GameObject.Find ("Canvas");
-				SSushi = SushiObj.GetComponent<SpawnSushi>();
+				Sushi = GameObject.Find ("Canvas");
+				SSushi = Sushi.GetComponent<SpawnSushi>();
 			}
 			
 			// Update is called once per frame

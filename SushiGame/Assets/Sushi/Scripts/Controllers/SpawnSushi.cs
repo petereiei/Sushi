@@ -9,12 +9,9 @@ public class SpawnSushi : MonoBehaviour {
 
 			public GameObject[] Sushia;
 			public Transform[] SushiPos;
+			public List<GameObject> SushiObj;
 			private GameObject sushi;
 
-
-			public List<Transform> SushiPons;
-			public List<GameObject> SushiObj;
-			//public List<Transform> Sushipos = new List<Transform> ();
 
 			public int SushiCount = 0;
 			private float counter = 0;
@@ -25,7 +22,7 @@ public class SpawnSushi : MonoBehaviour {
 
 			// Use this for initialization
 			void Start (){
-				SushiPons = new List<Transform>();
+				//SushiPons = new List<Transform>();
 				SushiObj = new List<GameObject> ();
 			}
 
@@ -35,7 +32,6 @@ public class SpawnSushi : MonoBehaviour {
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
-
 			}
 
 			public void ReSushiCount(){
@@ -128,7 +124,7 @@ public class SpawnSushi : MonoBehaviour {
 							SushiCount++;
 							sushi.name = Sushia [4].name;
 							Debug.Log (sushi.name);
-							Debug.Log (SushiPos [SushiCount].name);
+							//Debug.Log (SushiPos [SushiCount].name);
 							counterE = 5;
 						}
 					}
