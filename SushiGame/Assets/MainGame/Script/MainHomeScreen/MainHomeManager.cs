@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainHomeManager : MonoBehaviour {
 
-
     //StartGamePopUp 
     public GameObject StartGamePopupUI;
     public GameObject TimeSet;
@@ -21,7 +20,6 @@ public class MainHomeManager : MonoBehaviour {
     public GameObject sushiset2;
     public GameObject SetlockText;
     private bool SetLock = false;
-
 
     //StartGamePopUpButton
     public void StartGameOnclick() {
