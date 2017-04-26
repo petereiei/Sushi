@@ -12,13 +12,6 @@ namespace Scripts{
 
 			// Use this for initialization
 			void Start () {
-
-
-			}
-			
-			// Update is called once per frame
-			void Update () {
-
 				if (MainHomeManager.SetSelect == 1) {
 					SushiSet1.SetActive (true);
 					SushiSet2.SetActive (false);
@@ -26,7 +19,27 @@ namespace Scripts{
 					SushiSet2.SetActive (true);
 					SushiSet1.SetActive (false);
 				}
+			}
+			
+			// Update is called once per frame
+			void Update () {
 
+			}
+
+			public void uiSushiset(){
+				if(MainHomeManager.SetSelect == 1){
+					SushiSet1.SetActive (false);
+				}else if(MainHomeManager.SetSelect == 2){
+					SushiSet2.SetActive (false);
+				}
+			}
+
+			public void uiSushiNo(){
+				if(MainHomeManager.SetSelect == 1){
+					SushiSet1.SetActive (true);
+				}else if(MainHomeManager.SetSelect == 2){
+					SushiSet2.SetActive (true);
+				}
 			}
 		}
 	}

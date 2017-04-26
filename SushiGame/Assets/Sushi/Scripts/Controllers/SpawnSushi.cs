@@ -11,6 +11,7 @@ public class SpawnSushi : MonoBehaviour {
 			public Transform[] SushiPos;
 			public List<GameObject> SushiObj;
 			private GameObject sushi;
+			//private GameObject _sushiset;
 
 
 			public int SushiCount = 0;
@@ -24,6 +25,7 @@ public class SpawnSushi : MonoBehaviour {
 			void Start (){
 				//SushiPons = new List<Transform>();
 				SushiObj = new List<GameObject> ();
+				//_sushiset = GameObject.Find ("Canvas/tabs/tab1");
 			}
 
 			void Update(){
@@ -49,6 +51,7 @@ public class SpawnSushi : MonoBehaviour {
 						if (SushiCount < SushiPos.Length) {
 							sushi = Instantiate (Sushia [0], SushiPos[SushiCount].transform.position, Quaternion.identity);		
 							SushiObj.Add (sushi.gameObject);
+							//sushi.transform.SetParent (_sushiset.transform);
 							SushiCount++;
 							sushi.name = Sushia [0].name;
 							Debug.Log (sushi.name);

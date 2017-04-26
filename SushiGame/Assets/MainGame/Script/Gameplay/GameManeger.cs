@@ -89,7 +89,6 @@ public class GameManeger : MonoBehaviour {
             Timer.stop = true;
             Debug.Log("Timer Stop");
         }
-
     }
 
 
@@ -100,8 +99,7 @@ public class GameManeger : MonoBehaviour {
         incomeText.text = income.ToString();
         Debug.Log("TakeIncome");
     }
-
-
+		
     public void CustomerIncome()
     {
         income += 100;
@@ -144,6 +142,4 @@ public class GameManeger : MonoBehaviour {
         }
 
     }
-
-
 }
