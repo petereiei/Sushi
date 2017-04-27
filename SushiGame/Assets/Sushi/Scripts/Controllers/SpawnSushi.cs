@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace Scripts{
@@ -10,6 +11,7 @@ public class SpawnSushi : MonoBehaviour {
 			public GameObject[] Sushia;
 			public Transform[] SushiPos;
 			public List<GameObject> SushiObj;
+			public Image[] _uiSushiCool;
 			private GameObject sushi;
 			//private GameObject _sushiset;
 
@@ -29,11 +31,20 @@ public class SpawnSushi : MonoBehaviour {
 			}
 
 			void Update(){
+				
 				counter -= Time.deltaTime;
 				counterb -= Time.deltaTime;
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
+
+
+				_uiSushiCool [0].fillAmount = counter;
+				_uiSushiCool [1].fillAmount = counterb;
+				_uiSushiCool [2].fillAmount = counterC;
+				_uiSushiCool [3].fillAmount = counterD;
+				_uiSushiCool [4].fillAmount = counterE;
+
 			}
 
 			public void ReSushiCount(){
@@ -56,7 +67,7 @@ public class SpawnSushi : MonoBehaviour {
 							sushi.name = Sushia [0].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counter = 0;
+							counter = 1;
 						}
 					}
 				}
@@ -74,7 +85,7 @@ public class SpawnSushi : MonoBehaviour {
 							sushi.name = Sushia [1].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos[SushiCount].name);
-							counterb = 4;
+							counterb = 1;
 						}
 					}
 				}
@@ -92,7 +103,7 @@ public class SpawnSushi : MonoBehaviour {
 							sushi.name = Sushia [2].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counterC = 5;
+							counterC = 1;
 						}
 					}
 				}
@@ -110,7 +121,7 @@ public class SpawnSushi : MonoBehaviour {
 							sushi.name = Sushia [3].name;
 							Debug.Log (sushi.name);
 //							Debug.Log (SushiPos [SushiCount].name);
-							counterD = 2;
+							counterD = 1;
 						}
 					}
 				}
@@ -128,7 +139,7 @@ public class SpawnSushi : MonoBehaviour {
 							sushi.name = Sushia [4].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counterE = 5;
+							counterE = 1;
 						}
 					}
 				}

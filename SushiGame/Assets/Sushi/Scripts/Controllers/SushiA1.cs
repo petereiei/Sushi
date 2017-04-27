@@ -8,13 +8,17 @@ namespace Scripts{
 	namespace Controllers{
 		public class SushiA1 : ControllerSushi {
 
-			private SpawnSushiB SSushi;
+			private SpawnSushi SSushi;
+			private GameManeger _gm;
 			private GameObject Sushi;
+			private GameObject UISsushi;
 
 			// Use this for initialization
 			void Start () {
 				Sushi = GameObject.Find ("Canvas");
-				SSushi = Sushi.GetComponent<SpawnSushiB>();
+				UISsushi = GameObject.Find ("Canvas/GameplayManager");
+				_gm = UISsushi.GetComponent<GameManeger> ();
+				SSushi = Sushi.GetComponent<SpawnSushi>();
 			}
 
 			// Update is called once per frame
@@ -37,6 +41,7 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount();
+					_gm.CustomerIncome ();
 				}
 			}
 

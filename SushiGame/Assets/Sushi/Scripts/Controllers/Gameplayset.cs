@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Scripts.GameManager;
 
 namespace Scripts{
 	namespace Controllers{
@@ -9,15 +10,25 @@ namespace Scripts{
 			public GameObject SushiSet1;
 			public GameObject SushiSet2;
 
+			CustomersManager _cmA;
+			CustomersManagerB _cmB;
 
 			// Use this for initialization
 			void Start () {
+
+				_cmA = GetComponent<CustomersManager> ();
+				_cmB = GetComponent<CustomersManagerB> ();
+
 				if (MainHomeManager.SetSelect == 1) {
 					SushiSet1.SetActive (true);
 					SushiSet2.SetActive (false);
+					_cmA.enabled = true;
+					_cmB.enabled = false;
 				} else if(MainHomeManager.SetSelect == 2){
 					SushiSet2.SetActive (true);
 					SushiSet1.SetActive (false);
+					_cmB.enabled = true;
+					_cmA.enabled = false;
 				}
 			}
 			

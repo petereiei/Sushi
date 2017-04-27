@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts{
 	namespace Controllers{
@@ -10,6 +11,7 @@ namespace Scripts{
 			public Transform[] SushiPos;
 			public List<GameObject> SushiObj;
 			private GameObject sushi;
+			public Image[] _uiSushiCoolB;
 
 
 			public int SushiCount = 0;
@@ -31,6 +33,12 @@ namespace Scripts{
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
+
+				_uiSushiCoolB [0].fillAmount = counter;
+				_uiSushiCoolB [1].fillAmount = counterb;
+				_uiSushiCoolB [2].fillAmount = counterC;
+				_uiSushiCoolB [3].fillAmount = counterD;
+				_uiSushiCoolB [4].fillAmount = counterE;
 			}
 
 			public void ReSushiCount(){
@@ -52,7 +60,7 @@ namespace Scripts{
 							sushi.name = Sushia [0].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counter = 0;
+							counter = 1;
 						}
 					}
 				}
@@ -70,7 +78,7 @@ namespace Scripts{
 							sushi.name = Sushia [1].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos[SushiCount].name);
-							counterb = 4;
+							counterb = 1;
 						}
 					}
 				}
@@ -88,7 +96,7 @@ namespace Scripts{
 							sushi.name = Sushia [2].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counterC = 5;
+							counterC = 1;
 						}
 					}
 				}
@@ -106,7 +114,7 @@ namespace Scripts{
 							sushi.name = Sushia [3].name;
 							Debug.Log (sushi.name);
 							//							Debug.Log (SushiPos [SushiCount].name);
-							counterD = 2;
+							counterD = 1;
 						}
 					}
 				}
@@ -124,7 +132,7 @@ namespace Scripts{
 							sushi.name = Sushia [4].name;
 							Debug.Log (sushi.name);
 							//Debug.Log (SushiPos [SushiCount].name);
-							counterE = 5;
+							counterE = 1;
 						}
 					}
 				}

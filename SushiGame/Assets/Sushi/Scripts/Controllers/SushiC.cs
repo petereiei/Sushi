@@ -10,11 +10,15 @@ namespace Scripts{
 		public class SushiC : ControllerSushi {
 
 			private SpawnSushi SSushi;
+			private GameManeger _gm;
 			private GameObject Sushi;
+			private GameObject UISsushi;
 
 			// Use this for initialization
 			void Start () {
 				Sushi = GameObject.Find ("Canvas");
+				UISsushi = GameObject.Find ("Canvas/GameplayManager");
+				_gm = UISsushi.GetComponent<GameManeger> ();
 				SSushi = Sushi.GetComponent<SpawnSushi>();
 			}
 
@@ -48,6 +52,7 @@ namespace Scripts{
 					Destroy (other.gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount ();
+					_gm.CustomerIncome ();
 				}
 				else {
 					Debug.Log ("no Sushi");
