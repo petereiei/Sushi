@@ -41,7 +41,6 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount();
-					_gm.CustomerIncome ();
 				}
 			}
 
@@ -52,6 +51,8 @@ namespace Scripts{
 					Destroy (other.gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount ();
+					_gm.CustomerIncome ();
+					_gm.SatisfyGetOrLoss ();
 				}
 				else {
 					Debug.Log ("no Sushi");

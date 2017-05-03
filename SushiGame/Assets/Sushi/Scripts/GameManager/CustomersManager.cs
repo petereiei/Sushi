@@ -26,12 +26,13 @@ namespace Scripts{
 			}
 
 			void Spawn(){
-				for (int i = 0; i < 8; i++) {
+				for (int i = 0; i < TablePopUpUI.TableNumber; i++) {
+					Debug.Log (TablePopUpUI.TableNumber);
 					if (Customer_Reference [i] == null && TimeSpawn <= 0f) {
 						idCustomer = Random.Range (0, CustomersObj.Length);
 						Customer_Reference [i] = GameObject.Instantiate (CustomersObj [idCustomer], PosCustomer [i].transform.position, transform.rotation);
 						Debug.Log ("idCustomer " + idCustomer);
-						TimeSpawn = 2f;
+						TimeSpawn = 1.5f;
 					}
 				}
 			}

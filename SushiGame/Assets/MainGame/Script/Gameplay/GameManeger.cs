@@ -17,6 +17,7 @@ public class GameManeger : MonoBehaviour {
     public static bool Timepasue = false;
 
     private int Satisfy;
+	private int _Satisfyup;
 
     public int income;
 
@@ -29,6 +30,18 @@ public class GameManeger : MonoBehaviour {
 
         incomeText.text = income.ToString();
         SatisfyText.text = Satisfy.ToString() + "/100";
+
+		if(PlayerStatus.CookingQualityLV == 0){
+			_Satisfyup = 1;
+		}if(PlayerStatus.CookingQualityLV == 1){
+			_Satisfyup = 2;
+		}if(PlayerStatus.CookingQualityLV == 2){
+			_Satisfyup = 3;
+		}if(PlayerStatus.CookingQualityLV == 3){
+			_Satisfyup = 4;
+		}if(PlayerStatus.CookingQualityLV == 4){
+			_Satisfyup = 5;
+		}
         
     }
 	
@@ -113,7 +126,7 @@ public class GameManeger : MonoBehaviour {
         {
             if (Satisfy <= 99)
             {
-                Satisfy += 5;
+				Satisfy += _Satisfyup + 5;
                 Debug.Log("GetSatisfy");
             }
             else

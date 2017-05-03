@@ -160,6 +160,8 @@ public class RecipeUnlockManage : MonoBehaviour {
                     Black.SetActive(false);
                     PopUpRecipe.SetActive(false);
                     RecipePopUpShow = false;
+					Sushi6Text.SetActive (true);
+
                 }
             }
         }
@@ -177,6 +179,7 @@ public class RecipeUnlockManage : MonoBehaviour {
                     Black.SetActive(false);
                     PopUpRecipe.SetActive(false);
                     RecipePopUpShow = false;
+					Sushi7Text.SetActive (true);
                 }
             }
         }
@@ -194,6 +197,7 @@ public class RecipeUnlockManage : MonoBehaviour {
                     Black.SetActive(false);
                     PopUpRecipe.SetActive(false);
                     RecipePopUpShow = false;
+					Sushi8Text.SetActive (true);
                 }
             }
         }
@@ -212,6 +216,7 @@ public class RecipeUnlockManage : MonoBehaviour {
                     Black.SetActive(false);
                     PopUpRecipe.SetActive(false);
                     RecipePopUpShow = false;
+					Sushi9Text.SetActive (true);
                 }
             }
         }
@@ -230,6 +235,7 @@ public class RecipeUnlockManage : MonoBehaviour {
                     Black.SetActive(false);
                     PopUpRecipe.SetActive(false);
                     RecipePopUpShow = false;
+					Sushi10Text.SetActive (true);
                 }
             }
         }

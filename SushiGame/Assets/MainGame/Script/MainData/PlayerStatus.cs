@@ -5,10 +5,10 @@ using UnityEngine;
 public static class PlayerStatus  {
 
     //Money
-    public static int Money = 0;
+    public static int Money = 99999;
 
     //FurnitureStatus
-    public static int SushibarSlotLV = 1;
+    public static int SushibarSlotLV = 0;
 
     //static public int TableCount = 4;
     public static bool Table1On = false;

@@ -194,107 +194,83 @@ public class TableSetManage : MonoBehaviour {
             TablePopUpUI.TableNumber = 1;
             TablePopUpUI.TableUIShow = true;
         }
-
-
     }
 
     public void Table2ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 1)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 2;
             TablePopUpUI.TableUIShow = true;
         }
-        
-
     }
 
     public void Table3ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 2)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 3;
             TablePopUpUI.TableUIShow = true;
         }
-     
-
-
     }
 
     public void Table4ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 3)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 4;
             TablePopUpUI.TableUIShow = true;
         }
-
-
-
-
     }
 
     public void Table5ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 4)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 5;
             TablePopUpUI.TableUIShow = true;
         }
-     
-
-
-
     }
 
     public void Table6ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 5)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 6;
             TablePopUpUI.TableUIShow = true;
         }
-      
-
-
     }
 
     public void Table7ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 6)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 7;
             TablePopUpUI.TableUIShow = true;
         }
-   
- 
-
     }
 
     public void Table8ManageOnclick()
     {
-        if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 7)
         {
             Black.SetActive(true);
             TableUI.SetActive(true);
             TablePopUpUI.TableNumber = 8;
             TablePopUpUI.TableUIShow = true;
         }
-        
-
-
     }
 
     

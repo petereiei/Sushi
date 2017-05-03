@@ -52,6 +52,7 @@ namespace Scripts{
 					Destroy (gameObject);
 					SSushi.ReSushiCount ();
 					_gm.CustomerIncome ();
+					_gm.SatisfyGetOrLoss ();
 
 				}
 				else {

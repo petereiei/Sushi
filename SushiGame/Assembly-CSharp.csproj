@@ -90,6 +90,7 @@
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiE5.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiPos.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\SushiTimeDown.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Controllers\TableController.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\Test.cs" />
      <Compile Include="Assets\Sushi\Scripts\Controllers\UpPoint.cs" />
      <Compile Include="Assets\Sushi\Scripts\GameManager\CustomersManager.cs" />
