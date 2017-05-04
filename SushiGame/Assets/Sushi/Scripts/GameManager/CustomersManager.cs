@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Scripts.Controllers;
 
 
 namespace Scripts{
@@ -14,7 +15,6 @@ namespace Scripts{
 			private float TimeSpawn = 2f;
 			//private int idPosCustomer;
 			private GameObject[] Customer_Reference = new GameObject[8];
-
 			// Use this for initialization
 			void Start(){
 				InvokeRepeating ("Spawn",3f,5f);
@@ -32,6 +32,7 @@ namespace Scripts{
 						idCustomer = Random.Range (0, CustomersObj.Length);
 						Customer_Reference [i] = GameObject.Instantiate (CustomersObj [idCustomer], PosCustomer [i].transform.position, transform.rotation);
 						Debug.Log ("idCustomer " + idCustomer);
+						Debug.Log ("Number" + TablePopUpUI.TableNumber);
 						TimeSpawn = 1.5f;
 					}
 				}

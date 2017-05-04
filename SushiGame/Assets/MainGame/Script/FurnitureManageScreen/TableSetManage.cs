@@ -315,45 +315,45 @@ public class TableSetManage : MonoBehaviour {
     }
 
 
-    public void Table1Offclick()
-    {
-        PlayerStatus.Table1On = false;
-    }
-
-    public void Table2Offclick()
-    {
-
-        PlayerStatus.Table2On = false;
-    }
-
-    public void Table3Offclick()
-    {
-        PlayerStatus.Table3On = false;
-    }
-
-    public void Table4Offclick()
-    {
-        PlayerStatus.Table4On = false;
-    }
-
-    public void Table5Offclick()
-    {
-        PlayerStatus.Table5On = false;
-    }
-
-    public void Table6Offclick()
-    {
-        PlayerStatus.Table6On = false;
-    }
-
-    public void Table7Offclick()
-    {
-        PlayerStatus.Table7On = false;
-    }
-
-    public void Table8Offclick()
-    {
-        PlayerStatus.Table8On = false;
-    }
+//    public void Table1Offclick()
+//    {
+//        PlayerStatus.Table1On = false;
+//    }
+//
+//    public void Table2Offclick()
+//    {
+//
+//        PlayerStatus.Table2On = false;
+//    }
+//
+//    public void Table3Offclick()
+//    {
+//        PlayerStatus.Table3On = false;
+//    }
+//
+//    public void Table4Offclick()
+//    {
+//        PlayerStatus.Table4On = false;
+//    }
+//
+//    public void Table5Offclick()
+//    {
+//        PlayerStatus.Table5On = false;
+//    }
+//
+//    public void Table6Offclick()
+//    {
+//        PlayerStatus.Table6On = false;
+//    }
+//
+//    public void Table7Offclick()
+//    {
+//        PlayerStatus.Table7On = false;
+//    }
+//
+//    public void Table8Offclick()
+//    {
+//        PlayerStatus.Table8On = false;
+//    }
 
 }

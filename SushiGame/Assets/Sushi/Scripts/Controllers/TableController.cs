@@ -74,6 +74,20 @@ namespace Scripts{
 			void Update () {
 				if(PlayerStatus.Table1On == false){
 					Table1.SetActive (false);
+				}if(PlayerStatus.Table2On == false){
+					Table2.SetActive (false);
+				}if(PlayerStatus.Table3On == false){
+					Table3.SetActive (false);
+				}if(PlayerStatus.Table4On == false){
+					Table4.SetActive (false);
+				}if(PlayerStatus.Table5On == false){
+					Table5.SetActive (false);
+				}if(PlayerStatus.Table6On == false){
+					Table6.SetActive (false);
+				}if(PlayerStatus.Table7On == false){
+					Table7.SetActive (false);
+				}if(PlayerStatus.Table8On == false){
+					Table8.SetActive (false);
 				}
 				
 			}

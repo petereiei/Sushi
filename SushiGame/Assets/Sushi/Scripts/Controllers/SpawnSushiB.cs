@@ -21,7 +21,7 @@ namespace Scripts{
 			private float counterD = 0;
 			private float counterE = 0;
 
-			public int _multiSushiA;
+			private int _multiSushiA;
 			private int _multiSushiB;
 			private int _multiSushiC;
 			private int _multiSushiD;
@@ -92,29 +92,30 @@ namespace Scripts{
 							Debug.Log (sushi.name);
 							if(_multiSushiA == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
-									Debug.Log ("Speed 1");
+									Debug.Log ("Speed LV 1");
 									counter = 2f;
 									_multiSushiA = 0;
 								}if(PlayerStatus.CookingSpeedLV == 2){
-									Debug.Log ("Speed 2");
+									Debug.Log ("Speed LV 2");
 									counter = 1.5f;
 									_multiSushiA = 0;
 								}if(PlayerStatus.CookingSpeedLV == 3){
-									Debug.Log ("Speed 3");
+									Debug.Log ("Speed LV 3");
 									counter = 1f;
 									_multiSushiA = 0;
 								}if (PlayerStatus.CookingSpeedLV == 4) {
-									Debug.Log ("Speed 4");
+									Debug.Log ("Speed LV 4");
 									counter = 0.5f;
 									_multiSushiA = 0;
 								}else{
-									Debug.Log ("Speed 2.5");
+									Debug.Log ("Speed LV 2.5");
 									counter = 2.5f;
 									_multiSushiA = 0;
 								}
 							}else {
 								Debug.Log ("Speed 0");
 								counter = 0f;
+								_multiSushiA++;
 							}
 						}
 					}
@@ -133,29 +134,30 @@ namespace Scripts{
 							Debug.Log (sushi.name);
 							if(_multiSushiB == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
-									Debug.Log ("Speed 1");
+									Debug.Log ("Speed LV 1");
 									counterb = 2f;
 									_multiSushiB = 0;
 								}if(PlayerStatus.CookingSpeedLV == 2){
-									Debug.Log ("Speed 2");
+									Debug.Log ("Speed LV 2");
 									counterb = 1.5f;
 									_multiSushiB = 0;
 								}if(PlayerStatus.CookingSpeedLV == 3){
-									Debug.Log ("Speed 3");
+									Debug.Log ("Speed LV 3");
 									counterb = 1f;
 									_multiSushiB = 0;
 								}if (PlayerStatus.CookingSpeedLV == 4) {
-									Debug.Log ("Speed 4");
+									Debug.Log ("Speed LV 4");
 									counterb = 0.5f;
 									_multiSushiB = 0;
 								}else{
-									Debug.Log ("Speed 2.5");
+									Debug.Log ("Speed LV 2.5");
 									counterb = 2.5f;
 									_multiSushiB = 0;
 								}
 							}else {
 								Debug.Log ("Speed 0");
 								counterb = 0f;
+								_multiSushiB++;
 							}
 						}
 					}
@@ -174,29 +176,30 @@ namespace Scripts{
 							Debug.Log (sushi.name);
 							if(_multiSushiC == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
-									Debug.Log ("Speed 1");
+									Debug.Log ("Speed LV 1");
 									counterC = 2f;
 									_multiSushiC = 0;
 								}if(PlayerStatus.CookingSpeedLV == 2){
-									Debug.Log ("Speed 2");
+									Debug.Log ("Speed LV 2");
 									counterC = 1.5f;
 									_multiSushiC = 0;
 								}if(PlayerStatus.CookingSpeedLV == 3){
-									Debug.Log ("Speed 3");
+									Debug.Log ("Speed LV 3");
 									counterC = 1f;
 									_multiSushiC = 0;
 								}if (PlayerStatus.CookingSpeedLV == 4) {
-									Debug.Log ("Speed 4");
+									Debug.Log ("Speed LV 4");
 									counterC = 0.5f;
 									_multiSushiC = 0;
 								}else{
-									Debug.Log ("Speed 2.5");
+									Debug.Log ("Speed LV 2.5");
 									counterC = 2.5f;
 									_multiSushiC = 0;
 								}
 							}else {
 								Debug.Log ("Speed 0");
 								counterC = 0f;
+								_multiSushiC++;
 							}
 						}
 					}
@@ -215,29 +218,30 @@ namespace Scripts{
 							Debug.Log (sushi.name);
 							if(_multiSushiD == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
-									Debug.Log ("Speed 1");
+									Debug.Log ("Speed LV 1");
 									counterD = 2f;
 									_multiSushiD = 0;
 								}if(PlayerStatus.CookingSpeedLV == 2){
-									Debug.Log ("Speed 2");
+									Debug.Log ("Speed LV 2");
 									counterD = 1.5f;
 									_multiSushiD = 0;
 								}if(PlayerStatus.CookingSpeedLV == 3){
-									Debug.Log ("Speed 3");
+									Debug.Log ("Speed LV 3");
 									counterD = 1f;
 									_multiSushiD = 0;
 								}if (PlayerStatus.CookingSpeedLV == 4) {
-									Debug.Log ("Speed 4");
+									Debug.Log ("Speed LV 4");
 									counterD = 0.5f;
 									_multiSushiD = 0;
 								}else{
-									Debug.Log ("Speed 2.5");
+									Debug.Log ("Speed LV 2.5");
 									counterD = 2.5f;
 									_multiSushiD = 0;
 								}
 							}else {
 								Debug.Log ("Speed 0");
 								counterD = 0f;
+								_multiSushiD++;
 							}
 						}
 					}
@@ -256,29 +260,30 @@ namespace Scripts{
 							Debug.Log (sushi.name);
 							if(_multiSushiE == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
-									Debug.Log ("Speed 1");
+									Debug.Log ("Speed LV 1");
 									counterE = 2f;
 									_multiSushiE = 0;
 								}if(PlayerStatus.CookingSpeedLV == 2){
-									Debug.Log ("Speed 2");
+									Debug.Log ("Speed LV 2");
 									counterE = 1.5f;
 									_multiSushiE = 0;
 								}if(PlayerStatus.CookingSpeedLV == 3){
-									Debug.Log ("Speed 3");
+									Debug.Log ("Speed LV 3");
 									counterE = 1f;
 									_multiSushiE = 0;
 								}if (PlayerStatus.CookingSpeedLV == 4) {
-									Debug.Log ("Speed 4");
+									Debug.Log ("Speed LV 4");
 									counterE = 0.5f;
 									_multiSushiE = 0;
 								}else{
-									Debug.Log ("Speed 2.5");
+									Debug.Log ("Speed LV 2.5");
 									counterE = 2.5f;
 									_multiSushiE = 0;
 								}
 							}else {
 								Debug.Log ("Speed 0");
 								counterE = 0f;
+								_multiSushiE++;
 							}
 						}
 					}

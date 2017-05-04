@@ -41,6 +41,7 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount();
+					//SSushi.PosSushi();
 				}
 			}
 
