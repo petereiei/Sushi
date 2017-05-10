@@ -15,6 +15,7 @@ namespace Scripts{
 
 			// Use this for initialization
 			void Start () {
+
 				Sushi = GameObject.Find ("Canvas");
 				UISsushi = GameObject.Find ("Canvas/GameplayManager");
 				_gm = UISsushi.GetComponent<GameManeger> ();
@@ -51,6 +52,7 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (other.gameObject);
 					Destroy (gameObject);
+					SSushi._myAudio.PlayOneShot (SSushi._myClipSushi);
 					SSushi.ReSushiCount ();
 					_gm.CustomerIncome ();
 					_gm.SatisfyGetOrLoss ();

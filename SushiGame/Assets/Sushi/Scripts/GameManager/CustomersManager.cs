@@ -15,8 +15,13 @@ namespace Scripts{
 			private float TimeSpawn = 2f;
 			//private int idPosCustomer;
 			private GameObject[] Customer_Reference = new GameObject[8];
+
+			AudioSource _myAudio;
+			public AudioClip _myClipSushi;
+
 			// Use this for initialization
 			void Start(){
+				_myAudio = GetComponent<AudioSource> ();
 				InvokeRepeating ("Spawn",3f,5f);
 			}
 			
@@ -31,6 +36,7 @@ namespace Scripts{
 					if (Customer_Reference [i] == null && TimeSpawn <= 0f) {
 						idCustomer = Random.Range (0, CustomersObj.Length);
 						Customer_Reference [i] = GameObject.Instantiate (CustomersObj [idCustomer], PosCustomer [i].transform.position, transform.rotation);
+						_myAudio.Play ();
 						Debug.Log ("idCustomer " + idCustomer);
 						Debug.Log ("Number" + TablePopUpUI.TableNumber);
 						TimeSpawn = 1.5f;

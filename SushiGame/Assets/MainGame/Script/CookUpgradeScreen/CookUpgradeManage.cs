@@ -34,7 +34,13 @@ public class CookUpgradeManage : MonoBehaviour {
 
     private bool PopUpShow = false;
 
+	AudioSource _myAudio;
+	public AudioClip _myClipSushi;
+
+
     void Start () {
+
+		_myAudio = GetComponent<AudioSource> ();
 		
        SetTextCS = SkillTextCS.GetComponent<Text>();
        
@@ -83,22 +89,27 @@ public class CookUpgradeManage : MonoBehaviour {
 
             if (PlayerStatus.CookingSpeedLV == 0)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV1Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 1)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV2Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 2)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV3Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 3)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV4Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 4)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "MaxLV";
             }
         }
@@ -122,22 +133,27 @@ public class CookUpgradeManage : MonoBehaviour {
 
             if (PlayerStatus.MultiCookingLV == 0)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.MultiTaskingLV1Cost;
             }
             if (PlayerStatus.MultiCookingLV == 1)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.MultiTaskingLV2Cost;
             }
             if (PlayerStatus.MultiCookingLV == 2)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.MultiTaskingLV3Cost;
             }
             if (PlayerStatus.MultiCookingLV == 3)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.MultiTaskingLV4Cost;
             }
             if (PlayerStatus.MultiCookingLV == 4)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "MaxLV";
             }
         }
@@ -158,22 +174,27 @@ public class CookUpgradeManage : MonoBehaviour {
 
             if (PlayerStatus.CookingQualityLV == 0)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingQualityLV1Cost;
             }
             if (PlayerStatus.CookingQualityLV == 1)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingQualityLV2Cost;
             }
             if (PlayerStatus.CookingQualityLV == 2)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingQualityLV3Cost;
             }
             if (PlayerStatus.CookingQualityLV == 3)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingQualityLV4Cost;
             }
             if (PlayerStatus.CookingQualityLV == 4)
             {
+				_myAudio.Play ();
                 CostTextSet.text = "MaxLV";
             }
         }
@@ -188,6 +209,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingSpeedLV1Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingSpeedLV1Cost;
                     PlayerStatus.CookingSpeedLV += 1;
                     PopUpShow = false;
@@ -202,6 +224,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingSpeedLV2Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingSpeedLV2Cost;
                     PlayerStatus.CookingSpeedLV += 1;
                     PopUpShow = false;
@@ -215,6 +238,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingSpeedLV3Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingSpeedLV3Cost;
                     PlayerStatus.CookingSpeedLV += 1;
                     PopUpShow = false;
@@ -228,6 +252,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingSpeedLV4Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingSpeedLV4Cost;
                     PlayerStatus.CookingSpeedLV += 1;
                     PopUpShow = false;
@@ -239,6 +264,7 @@ public class CookUpgradeManage : MonoBehaviour {
             else
          if (PlayerStatus.CookingSpeedLV == 4)
             {
+				_myAudio.Play ();
                 Debug.Log("MaxLV");
                 PopUpShow = false;
                 Black.SetActive(false);
@@ -256,6 +282,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.MultiTaskingLV1Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.MultiTaskingLV1Cost;
                     PlayerStatus.MultiCookingLV += 1;
                     PopUpShow = false;
@@ -269,6 +296,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.MultiTaskingLV2Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.MultiTaskingLV2Cost;
                     PlayerStatus.MultiCookingLV += 1;
                     PopUpShow = false;
@@ -282,6 +310,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.MultiTaskingLV3Cost)
                 {
+					_myAudio.Play ();		
                     PlayerStatus.Money -= GameData.MultiTaskingLV3Cost;
                     PlayerStatus.MultiCookingLV += 1;
                     PopUpShow = false;
@@ -295,6 +324,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.MultiTaskingLV4Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.MultiTaskingLV4Cost;
                     PlayerStatus.MultiCookingLV += 1;
                     PopUpShow = false;
@@ -306,6 +336,7 @@ public class CookUpgradeManage : MonoBehaviour {
             else
         if (PlayerStatus.MultiCookingLV == 4)
             {
+				_myAudio.Play ();
                 Debug.Log("MaxLV");
                 PopUpShow = false;
                 Black.SetActive(false);
@@ -320,6 +351,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingQualityLV1Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingQualityLV1Cost;
                     PlayerStatus.CookingQualityLV += 1;
                     PopUpShow = false;
@@ -333,6 +365,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingQualityLV2Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingQualityLV2Cost;
                     PlayerStatus.CookingQualityLV += 1;
                     PopUpShow = false;
@@ -346,6 +379,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingQualityLV3Cost)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.CookingQualityLV3Cost;
                     PlayerStatus.CookingQualityLV += 1;
                     PopUpShow = false;
@@ -359,6 +393,7 @@ public class CookUpgradeManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.CookingQualityLV4Cost)
                 {
+					_myAudio.Play ();			
                     PlayerStatus.Money -= GameData.CookingQualityLV4Cost;
                     PlayerStatus.CookingQualityLV += 1;
                     PopUpShow = false;
@@ -370,6 +405,7 @@ public class CookUpgradeManage : MonoBehaviour {
             else
        if (PlayerStatus.CookingQualityLV == 4)
             {
+				_myAudio.Play ();
                 Debug.Log("MaxLV");
                 PopUpShow = false;
                 Black.SetActive(false);

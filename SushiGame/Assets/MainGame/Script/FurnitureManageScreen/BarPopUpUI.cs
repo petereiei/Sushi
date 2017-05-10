@@ -15,19 +15,28 @@ public class BarPopUpUI : MonoBehaviour {
 
     public static bool BarUIShow = false;
 
-
     private int NowLv = 0;
     private int NextLv = 0;
     private int NowCost;
 
-    private void Start()
+	AudioSource _myAudio;
+	public AudioClip _myClipSushi;
+	private bool _myCancel = false;
+	private float _myCancelf = 1f;
+
+	private bool _myConfirm = false;
+	private float _myConfirmC = 1f;
+
+	private void Start()
     {
+		_myAudio = GetComponent<AudioSource> ();
         BarTextSet = BarText.GetComponent<Text>();
         BarPriceTextSet = BarPriceText.GetComponent<Text>();
     }
 
    private void Update()
     {
+
 
         if (PlayerStatus.SushibarSlotLV <= 4)
         {
@@ -54,6 +63,8 @@ public class BarPopUpUI : MonoBehaviour {
 
             BarPriceTextSet.text = "SushiBar Upgrade Cost : " + NowCost.ToString();
 
+
+
         }
         else
         if(PlayerStatus.SushibarSlotLV == 5)
@@ -62,42 +73,69 @@ public class BarPopUpUI : MonoBehaviour {
             BarPriceText.SetActive(false);
             BarTextSet.text = "You have Max SushibarSlot";
         }
+
+
+		if(_myCancel == true){
+			_myCancelf -= Time.deltaTime;
+		}
+		if(_myCancelf <= 0f){
+			myCancelOnclick ();
+		}if(_myConfirm == true){
+			_myConfirmC -= Time.deltaTime;
+		}
+		if(_myConfirmC <= 0f){
+			myConfirmOnclick ();
+		}
+
     }
+
+	public void myConfirmOnclick(){
+
+		if(PlayerStatus.Money >= NowCost)
+		{
+			PlayerStatus.SushibarSlotLV += 1;
+			PlayerStatus.Money -= NowCost;
+			NowLv = 0;
+			NextLv = 0;
+			BarUIShow = false;
+			Save.SaveData();
+			Black.SetActive(false);
+			this.gameObject.SetActive(false);
+			_myConfirm = false;
+			_myConfirmC = 1f;
+
+		}
+		else
+		{
+			BarPriceTextSet.text = "Not enough money";
+		}
+	}
 
     public void ConfirmOnclick()
     {
-
-        if(PlayerStatus.Money >= NowCost)
-        {
-            PlayerStatus.SushibarSlotLV += 1;
-            PlayerStatus.Money -= NowCost;
-            NowLv = 0;
-            NextLv = 0;
-            BarUIShow = false;
-            Save.SaveData();
-            Black.SetActive(false);
-            this.gameObject.SetActive(false);
-            
-        }
-        else
-        {
-            BarPriceTextSet.text = "Not enough money";
-        }
+		MyConfirmOnclick ();
+		_myConfirm = true;
 
     }
 
-
+	public void myCancelOnclick(){
+		NowLv = 0;
+		NextLv = 0;
+		BarUIShow = false;
+		Black.SetActive(false);
+		this.gameObject.SetActive(false);
+		_myCancel = false;
+		_myCancelf = 1f;
+	}
 
     public void CancelOnclick()
     {
-
-        NowLv = 0;
-        NextLv = 0;
-        BarUIShow = false;
-        Black.SetActive(false);
-        this.gameObject.SetActive(false);
-
+		MyConfirmOnclick ();
+		_myCancel = true;
    }
 
-
+	public void MyConfirmOnclick(){
+		_myAudio.Play ();
+	}
+		
 }

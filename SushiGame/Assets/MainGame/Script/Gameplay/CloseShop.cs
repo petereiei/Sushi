@@ -12,13 +12,32 @@ public class CloseShop : MonoBehaviour {
     private bool UIpop = false;
 
 
-	void Start(){
+	AudioSource _myAudio;
+	public AudioClip _myClip;
+	private bool _myClose = false;
+
+	private float _timeClose = 1f;
+
+
+	void Start (){
+		_myAudio = GetComponent<AudioSource> ();
+	}
+
+	void Update(){
+		if(_myClose == true){
+			_timeClose -= Time.deltaTime;
+		}
+
+		if(_timeClose <= 0){
+			myCloseYesOnclick ();
+		}
 	}
 
     public void CloseClick()
     {
         if(UIpop == false)
         {
+			_myAudio.Play ();
             UIpop = true;
             GameManeger.Timepasue = true;
             UIpopup.SetActive(true);
@@ -32,16 +51,27 @@ public class CloseShop : MonoBehaviour {
         
     }
 
+	void myCloseYesOnclick(){
+		Application.LoadLevel("MainRestaurantManage");
+		UIpop = false;
+		UIpopup.SetActive(false);
+		Save.SaveData();
+	}
+
     public void CloseYesOnclick()
     {
-        Application.LoadLevel("MainRestaurantManage");
-        UIpop = false;
-        UIpopup.SetActive(false);
-        Save.SaveData();
+		myClose ();
     }
+
+	void myClose(){
+		_myAudio.Play ();
+		_myClose = true;
+	}
+
 
     public void CloseNoOnclick()
     {
+		_myAudio.Play ();
         UIpop = false;
         GameManeger.Timepasue = true;
         UIpopup.SetActive(false);

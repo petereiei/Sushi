@@ -32,9 +32,14 @@ public class SpawnSushi : MonoBehaviour {
 
 			public int _multi;
 
+			public AudioSource _myAudio;
+			public AudioClip _myClipSushi;
 
 			// Use this for initialization
 			void Start (){
+
+				_myAudio = GetComponent<AudioSource> ();
+
 				SushiObj = new List<GameObject> ();
 				if(PlayerStatus.SushibarSlotLV == 0){
 					SushiSetCount = 0;
@@ -83,6 +88,8 @@ public class SpawnSushi : MonoBehaviour {
 
 				for(int i = 0; i < SushiCount; i++){
 					SushiObj [i].transform.position = SushiPos [i].position;
+					_myAudio.PlayOneShot (_myClipSushi);
+					Debug.Log (_myClipSushi);
 				}
 			}
 
@@ -97,6 +104,7 @@ public class SpawnSushi : MonoBehaviour {
 				if(Sushia != null){
 					if(counter <= 0 && SushiCount <= SushiSetCount){
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [0], SushiPos[SushiCount].transform.position, Quaternion.identity);		
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -141,6 +149,7 @@ public class SpawnSushi : MonoBehaviour {
 					if (counterb <= 0 && SushiCount <= SushiSetCount) {
 						//Debug.Log ("SushiB time 0 ");
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [1], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -185,6 +194,7 @@ public class SpawnSushi : MonoBehaviour {
 					if (counterC <= 0 && SushiCount <= SushiSetCount) {
 						//Debug.Log ("SushiC time 0 ");
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [2], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -228,6 +238,7 @@ public class SpawnSushi : MonoBehaviour {
 				if (Sushia != null) {
 					if (counterD <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [3], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -271,6 +282,7 @@ public class SpawnSushi : MonoBehaviour {
 				if (Sushia != null) {
 					if (counterE <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [4], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;

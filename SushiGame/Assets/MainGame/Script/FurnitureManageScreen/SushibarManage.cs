@@ -15,16 +15,22 @@ public class SushibarManage : MonoBehaviour {
 
     public GameObject BarPopUI;
 
+	AudioSource _myAudio;
+	public AudioClip _myClipSushi;
+
     void Start()
     {
+		_myAudio = GetComponent<AudioSource> ();
         BarLvText = BarLv.GetComponent<Text>();
         BarLvText.text = "Lv " + PlayerStatus.SushibarSlotLV;
     }
 
     public void BarManageOnclick()
     {
+		_myAudio.Play ();
         if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false )
         {
+			
             Black.SetActive(true);
             BarPopUpUI.BarUIShow = true;
             BarPopUI.SetActive(true);

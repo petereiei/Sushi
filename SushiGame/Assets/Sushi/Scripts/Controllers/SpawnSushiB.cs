@@ -29,9 +29,15 @@ namespace Scripts{
 
 			public int _multi;
 
+			AudioSource _myAudio;
+			public AudioClip _myClipSushi;
+
 			// Use this for initialization
 			void Start (){
-				SushiObj = new List<GameObject> ();
+
+				_myAudio = GetComponent<AudioSource> ();
+
+				//SushiObj = new List<GameObject> ();
 
 				if(PlayerStatus.SushibarSlotLV == 0){
 					SushiSetCount = 0;
@@ -77,6 +83,7 @@ namespace Scripts{
 
 				for(int i = 0; i < SushiCount; i++){
 					SushiObj [i].transform.position = SushiPos [i].position;
+					_myAudio.PlayOneShot (_myClipSushi);
 				}
 			}
 
@@ -85,6 +92,7 @@ namespace Scripts{
 				if(Sushia != null){
 					if(counter <= 0 && SushiCount <= SushiSetCount){
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [0], SushiPos[SushiCount].transform.position, Quaternion.identity);		
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -127,6 +135,7 @@ namespace Scripts{
 				if(Sushia != null){
 					if (counterb <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [1], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -169,6 +178,7 @@ namespace Scripts{
 				if (Sushia != null) {
 					if (counterC <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [2], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -211,6 +221,7 @@ namespace Scripts{
 				if (Sushia != null) {
 					if (counterD <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [3], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
@@ -253,6 +264,7 @@ namespace Scripts{
 				if (Sushia != null) {
 					if (counterE <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
+							_myAudio.Play ();
 							sushi = Instantiate (Sushia [4], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;

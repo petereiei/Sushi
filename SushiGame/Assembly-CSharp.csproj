@@ -98,6 +98,7 @@
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\DragItem.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemControllers\SlotSushi.cs" />
      <Compile Include="Assets\Sushi\Scripts\ItemUpgrade\ItemUp.cs" />
+     <Compile Include="Assets\Sushi\Scripts\Sound\SoundSushiplay.cs" />
      <Compile Include="Assets\Sushi\Scripts\Test\TestCall.cs" />
      <Compile Include="Assets\Sushi\Scripts\Test\TestPool.cs" />
      <Compile Include="Assets\Sushi\Scripts\Test\TestSingleton.cs" />

@@ -43,6 +43,14 @@ public class TableSetManage : MonoBehaviour {
 
     public GameObject TableUI;
 
+	AudioSource _myAudio;
+	public AudioClip _myClipSushi;
+
+	void Start (){
+
+		_myAudio = GetComponent<AudioSource> ();
+	}
+
     private void FixedUpdate()
     {
         if(PlayerStatus.Table1Buy == true)
@@ -187,12 +195,14 @@ public class TableSetManage : MonoBehaviour {
 
     public void Table1ManageOnclick()
     {
-        if(TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false)
+		if(TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false &&  TablePopUpUI.TableNumber == 0)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 1;
+           // TablePopUpUI.TableNumber = 1;
             TablePopUpUI.TableUIShow = true;
+			Debug.Log ("number" + TablePopUpUI.TableNumber);
         }
     }
 
@@ -200,10 +210,12 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 1)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 2;
+           // TablePopUpUI.TableNumber = 2;
             TablePopUpUI.TableUIShow = true;
+			Debug.Log ("number" + TablePopUpUI.TableNumber);
         }
     }
 
@@ -211,9 +223,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 2)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 3;
+           // TablePopUpUI.TableNumber = 3;
             TablePopUpUI.TableUIShow = true;
         }
     }
@@ -222,9 +235,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 3)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 4;
+            //TablePopUpUI.TableNumber = 4;
             TablePopUpUI.TableUIShow = true;
         }
     }
@@ -233,9 +247,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 4)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 5;
+            //TablePopUpUI.TableNumber = 5;
             TablePopUpUI.TableUIShow = true;
         }
     }
@@ -244,9 +259,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 5)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 6;
+           // TablePopUpUI.TableNumber = 6;
             TablePopUpUI.TableUIShow = true;
         }
     }
@@ -255,9 +271,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 6)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 7;
+           // TablePopUpUI.TableNumber = 7;
             TablePopUpUI.TableUIShow = true;
         }
     }
@@ -266,9 +283,10 @@ public class TableSetManage : MonoBehaviour {
     {
 		if (TablePopUpUI.TableUIShow == false && BarPopUpUI.BarUIShow == false && TablePopUpUI.TableNumber == 7)
         {
+			_myAudio.Play ();
             Black.SetActive(true);
             TableUI.SetActive(true);
-            TablePopUpUI.TableNumber = 8;
+           // TablePopUpUI.TableNumber = 8;
             TablePopUpUI.TableUIShow = true;
         }
     }

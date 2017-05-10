@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MainGame/Scene/OpenShop.unity
+- path: Assets/MainGame/Scene/StartGame.unity
   isLoaded: 1
   isActive: 1

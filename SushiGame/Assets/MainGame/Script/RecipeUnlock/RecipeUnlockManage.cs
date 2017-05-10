@@ -35,6 +35,9 @@ public class RecipeUnlockManage : MonoBehaviour {
     public GameObject RecipeHeadText;
     public GameObject RecipeCostText;
 
+	public AudioSource _myAudio;
+	public AudioClip _myClipSushi;
+
     private Text RecipeHeadTextSet;
     private Text RecipeCostTextSet;
 
@@ -43,6 +46,8 @@ public class RecipeUnlockManage : MonoBehaviour {
     private bool RecipePopUpShow = false;
     
     void Start () {
+
+		_myAudio = GetComponent<AudioSource> ();
 
         Sushi6TextSet = Sushi6Text.GetComponent<Text>();
         Sushi7TextSet = Sushi7Text.GetComponent<Text>();
@@ -83,6 +88,7 @@ public class RecipeUnlockManage : MonoBehaviour {
     {
         if (PlayerStatus.Sushi6Unlock == false)
         {
+			_myAudio.Play ();
             RecipeSelect = 1;
             RecipeHeadTextSet.text = "Do yo want to Unlock Sushi6 Recipe";
             RecipeCostTextSet.text = SushiUnlock6;
@@ -96,6 +102,7 @@ public class RecipeUnlockManage : MonoBehaviour {
     {
         if (PlayerStatus.Sushi7Unlock == false)
         {
+			_myAudio.Play ();
             RecipeSelect = 2;
             RecipeHeadTextSet.text = "Do yo want to Unlock Sushi7 Recipe";
             RecipeCostTextSet.text = SushiUnlock7;
@@ -108,6 +115,7 @@ public class RecipeUnlockManage : MonoBehaviour {
     {
         if (PlayerStatus.Sushi8Unlock == false)
         {
+			_myAudio.Play ();
             RecipeSelect = 3;
             RecipeHeadTextSet.text = "Do yo want to Unlock Sushi8 Recipe";
             RecipeCostTextSet.text = SushiUnlock8;
@@ -121,6 +129,7 @@ public class RecipeUnlockManage : MonoBehaviour {
     {
         if (PlayerStatus.Sushi9Unlock == false)
         {
+			_myAudio.Play ();
             RecipeSelect = 4;
             RecipeHeadTextSet.text = "Do yo want to Unlock Sushi9 Recipe";
             RecipeCostTextSet.text = SushiUnlock9;
@@ -134,6 +143,7 @@ public class RecipeUnlockManage : MonoBehaviour {
     {
         if (PlayerStatus.Sushi10Unlock == false)
         {
+			_myAudio.Play ();
             RecipeSelect = 5;
             RecipeHeadTextSet.text = "Do yo want to Unlock Sushi10 Recipe";
             RecipeCostTextSet.text = SushiUnlock10;
@@ -153,6 +163,7 @@ public class RecipeUnlockManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.Sushi6)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.Sushi6;
                     PlayerStatus.Sushi6Unlock = true;
                     SushiUnlock6 = "Unlock";
@@ -172,6 +183,7 @@ public class RecipeUnlockManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.Sushi7)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.Sushi7;
                     PlayerStatus.Sushi7Unlock = true;
                     SushiUnlock7 = "Unlock";
@@ -190,6 +202,7 @@ public class RecipeUnlockManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.Sushi8)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.Sushi8;
                     PlayerStatus.Sushi8Unlock = true;
                     SushiUnlock8 = "Unlock";
@@ -209,6 +222,7 @@ public class RecipeUnlockManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.Sushi9)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.Sushi9;
                     PlayerStatus.Sushi9Unlock = true;
                     SushiUnlock9 = "Unlock";
@@ -228,6 +242,7 @@ public class RecipeUnlockManage : MonoBehaviour {
             {
                 if (PlayerStatus.Money >= GameData.Sushi10)
                 {
+					_myAudio.Play ();
                     PlayerStatus.Money -= GameData.Sushi10;
                     PlayerStatus.Sushi10Unlock = true;
                     SushiUnlock10 = "Unlock";
@@ -245,6 +260,7 @@ public class RecipeUnlockManage : MonoBehaviour {
 
     public void RecipeCancelClick()
     {
+		_myAudio.Play ();
         Black.SetActive(false);
         PopUpRecipe.SetActive(false);
         RecipePopUpShow = false;
