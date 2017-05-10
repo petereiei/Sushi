@@ -12,6 +12,8 @@ public static class Save  {
 
         player.Furnitue.SushibarSlotLV = PlayerStatus.SushibarSlotLV;
 
+
+
         player.Furnitue.Table1On = PlayerStatus.Table1On;
         player.Furnitue.Table2On = PlayerStatus.Table2On;
         player.Furnitue.Table3On = PlayerStatus.Table3On;

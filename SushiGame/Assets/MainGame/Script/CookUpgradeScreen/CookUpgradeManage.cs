@@ -418,6 +418,7 @@ public class CookUpgradeManage : MonoBehaviour {
 
     public void skillPopUpCancel()
     {
+		_myAudio.Play ();
         PopUpShow = false;
         Black.SetActive(false);
         PopUpUI.SetActive(false);

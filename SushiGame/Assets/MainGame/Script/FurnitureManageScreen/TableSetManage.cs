@@ -47,7 +47,6 @@ public class TableSetManage : MonoBehaviour {
 	public AudioClip _myClipSushi;
 
 	void Start (){
-
 		_myAudio = GetComponent<AudioSource> ();
 	}
 
@@ -60,6 +59,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace1.SetActive(false);
                 Table1.SetActive(true);
                 Table1Off.SetActive(false);
+				TablePopUpUI.TableNumber = 1;
             }
             else
             if(PlayerStatus.Table1On == false)
@@ -78,6 +78,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace2.SetActive(false);
                 Table2.SetActive(true);
                 Table2Off.SetActive(false);
+				TablePopUpUI.TableNumber = 2;
             }
             else
             if (PlayerStatus.Table2On == false)
@@ -95,6 +96,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace3.SetActive(false);
                 Table3.SetActive(true);
                 Table3Off.SetActive(false);
+				TablePopUpUI.TableNumber = 3;
             }
             else
             if (PlayerStatus.Table3On == false)
@@ -112,6 +114,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace4.SetActive(false);
                 Table4.SetActive(true);
                 Table4Off.SetActive(false);
+				TablePopUpUI.TableNumber = 4;
             }
             else
             if (PlayerStatus.Table4On == false)
@@ -129,6 +132,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace5.SetActive(false);
                 Table5.SetActive(true);
                 Table5Off.SetActive(false);
+				TablePopUpUI.TableNumber = 5;
             }
             else
             if (PlayerStatus.Table5On == false)
@@ -146,6 +150,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace6.SetActive(false);
                 Table6.SetActive(true);
                 Table6Off.SetActive(false);
+				TablePopUpUI.TableNumber = 6;
             }
             else
             if (PlayerStatus.Table6On == false)
@@ -163,6 +168,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace7.SetActive(false);
                 Table7.SetActive(true);
                 Table7Off.SetActive(false);
+				TablePopUpUI.TableNumber = 7;
             }
             else
             if (PlayerStatus.Table7On == false)
@@ -180,6 +186,7 @@ public class TableSetManage : MonoBehaviour {
                 FreeSpace8.SetActive(false);
                 Table8.SetActive(true);
                 Table8Off.SetActive(false);
+				TablePopUpUI.TableNumber = 8;
             }
             else
             if (PlayerStatus.Table8On == false)

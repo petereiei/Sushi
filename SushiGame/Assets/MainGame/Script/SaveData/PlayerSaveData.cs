@@ -9,6 +9,11 @@ public struct PlayerSaveData  {
     public FurnitureStatus Furnitue;
     public PlayerCookSkillUpgradeStatus CookingSkill;
     public CookingRecipe RecipeUnlock;
+//	public MyTableNumber numberTable;
+//
+//	public struct MyTableNumber{
+//		public int Numbertab;
+//	}
 
     public struct FurnitureStatus {
 

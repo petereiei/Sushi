@@ -62,7 +62,6 @@ public class TablePopUpUI : MonoBehaviour {
 		{
 			if (TableNumber == 0)
 			{
-
 				PlayerStatus.Money -= GameData.TableCost;
 				PlayerStatus.Table1Buy = true;
 				PlayerStatus.Table1On = true;
@@ -70,12 +69,10 @@ public class TablePopUpUI : MonoBehaviour {
 			}
 			else if (TableNumber == 1)
 			{
-
 				PlayerStatus.Money -= GameData.TableCost;
 				PlayerStatus.Table2Buy = true;
 				PlayerStatus.Table2On = true;
 				TableNumber = 2;
-
 			}
 			else if (TableNumber == 2)
 			{
@@ -83,7 +80,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table3Buy = true;
 				PlayerStatus.Table3On = true;
 				TableNumber = 3;
-
 			}
 			else if (TableNumber == 3)
 			{
@@ -91,7 +87,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table4Buy = true;
 				PlayerStatus.Table4On = true;
 				TableNumber = 4;
-
 			}
 			else if (TableNumber == 4)
 			{
@@ -99,7 +94,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table5Buy = true;
 				PlayerStatus.Table5On = true;
 				TableNumber = 5;
-
 			}
 
 			else if (TableNumber == 5)
@@ -108,7 +102,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table6Buy = true;
 				PlayerStatus.Table6On = true;
 				TableNumber = 6;
-
 			}
 			else if (TableNumber == 6)
 			{
@@ -116,7 +109,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table7Buy = true;
 				PlayerStatus.Table7On = true;
 				TableNumber = 7;
-
 			}
 			else if (TableNumber == 7)
 			{
@@ -124,7 +116,6 @@ public class TablePopUpUI : MonoBehaviour {
 				PlayerStatus.Table8Buy = true;
 				PlayerStatus.Table8On = true;
 				TableNumber = 8;
-
 			}
 			Save.SaveData();
 			TableUIShow = false;

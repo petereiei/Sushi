@@ -89,6 +89,25 @@ namespace Scripts{
 				}if(PlayerStatus.Table8On == false){
 					Table8.SetActive (false);
 				}
+
+
+				if(PlayerStatus.Table1On == true){
+					Table1.SetActive (true);
+				}if(PlayerStatus.Table2On == true){
+					Table2.SetActive (true);
+				}if(PlayerStatus.Table3On == true){
+					Table3.SetActive (true);
+				}if(PlayerStatus.Table4On == true){
+					Table4.SetActive (true);
+				}if(PlayerStatus.Table5On == true){
+					Table5.SetActive (true);
+				}if(PlayerStatus.Table6On == true){
+					Table6.SetActive (true);
+				}if(PlayerStatus.Table7On == true){
+					Table7.SetActive (true);
+				}if(PlayerStatus.Table8On == true){
+					Table8.SetActive (true);
+				}
 				
 			}
 		}
