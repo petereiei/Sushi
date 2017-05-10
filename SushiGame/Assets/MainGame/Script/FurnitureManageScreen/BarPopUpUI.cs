@@ -130,7 +130,7 @@ public class BarPopUpUI : MonoBehaviour {
 
     public void CancelOnclick()
     {
-		MyConfirmOnclick ();
+		_myAudio.PlayOneShot (_myClipSushi);
 		_myCancel = true;
    }
 

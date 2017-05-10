@@ -8,7 +8,7 @@ namespace Scripts{
 	namespace Controllers{
 		public class SushiD4 : ControllerSushi {
 
-			private SpawnSushi SSushi;
+			private SpawnSushiB SSushib;
 			private GameManeger _gm;
 			private GameObject Sushi;
 			private GameObject UISsushi;
@@ -18,7 +18,7 @@ namespace Scripts{
 				Sushi = GameObject.Find ("Canvas");
 				UISsushi = GameObject.Find ("Canvas/GameplayManager");
 				_gm = UISsushi.GetComponent<GameManeger> ();
-				SSushi = Sushi.GetComponent<SpawnSushi>();
+				SSushib = Sushi.GetComponent<SpawnSushiB>();
 			}
 
 			// Update is called once per frame
@@ -38,20 +38,21 @@ namespace Scripts{
 				if (Input.GetMouseButtonUp (0) && hit.collider != null) {
 					Debug.Log ("mouse up");
 					Debug.Log ("Destroy sushi");
-					SSushi.SushiObj.Remove (gameObject);
+					SSushib.SushiObj.Remove (gameObject);
 					Destroy (gameObject);
-					SSushi.ReSushiCount();
+					SSushib.ReSushiCount();
+					SSushib._myAudio.PlayOneShot (SSushib._myClipSushi[2]);
 				}
 			}
 
 			void OnTriggerEnter2D(Collider2D other){
 				if (other.gameObject.tag == "SushiD2") {
 					Debug.Log (" Destroy " + other.gameObject.name + " and Customers ");
-					SSushi.SushiObj.Remove (gameObject);
+					SSushib.SushiObj.Remove (gameObject);
 					Destroy (other.gameObject);
 					Destroy (gameObject);
-					SSushi._myAudio.PlayOneShot (SSushi._myClipSushi);
-					SSushi.ReSushiCount ();
+					SSushib._myAudio.PlayOneShot (SSushib._myClipSushi[1]);
+					SSushib.ReSushiCount ();
 					_gm.CustomerIncome ();
 					_gm.SatisfyGetOrLoss ();
 				}

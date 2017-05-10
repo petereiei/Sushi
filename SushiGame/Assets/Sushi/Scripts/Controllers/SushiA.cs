@@ -42,7 +42,7 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (gameObject);
 					SSushi.ReSushiCount();
-					//SSushi.PosSushi();
+					SSushi._myAudio.PlayOneShot (SSushi._myClipSushi[2]);
 				}
 			}
 
@@ -52,7 +52,7 @@ namespace Scripts{
 					SSushi.SushiObj.Remove (gameObject);
 					Destroy (other.gameObject);
 					Destroy (gameObject);
-					SSushi._myAudio.PlayOneShot (SSushi._myClipSushi);
+					SSushi._myAudio.PlayOneShot (SSushi._myClipSushi[1]);
 					SSushi.ReSushiCount ();
 					_gm.CustomerIncome ();
 					_gm.SatisfyGetOrLoss ();

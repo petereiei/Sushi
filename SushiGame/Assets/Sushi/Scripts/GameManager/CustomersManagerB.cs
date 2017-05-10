@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Scripts.Controllers;
 
 namespace Scripts{
 	namespace GameManager{
@@ -29,7 +30,7 @@ namespace Scripts{
 			}
 
 			void Spawn(){
-				for (int i = 0; i < 8; i++) {
+				for (int i = 0; i < TablePopUpUI.TableNumber; i++) {
 					if (Customer_Reference [i] == null && TimeSpawn <= 0f) {
 						idCustomer = Random.Range (0, CustomersObjb.Length);
 						Customer_Reference [i] = GameObject.Instantiate (CustomersObjb [idCustomer], PosCustomer [i].transform.position, transform.rotation);

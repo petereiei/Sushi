@@ -140,7 +140,7 @@ public class TablePopUpUI : MonoBehaviour {
 
     public void CancelOnclick()
     {
-		MyConfirmOn ();
+		_myAudio.PlayOneShot (_myClipSushi);
 		_myCancel = true;
     }
 

@@ -10,8 +10,10 @@ namespace Scripts{
 			public GameObject[] Sushia;
 			public Transform[] SushiPos;
 			public List<GameObject> SushiObj;
-			private GameObject sushi;
 			public Image[] _uiSushiCoolB;
+			private GameObject sushi;
+			//private GameObject _sushiset;
+
 
 			public int SushiCount = 0;
 			private int SushiSetCount;
@@ -29,16 +31,15 @@ namespace Scripts{
 
 			public int _multi;
 
-			AudioSource _myAudio;
-			public AudioClip _myClipSushi;
+			public AudioSource _myAudio;
+			public AudioClip[] _myClipSushi;
 
 			// Use this for initialization
 			void Start (){
 
 				_myAudio = GetComponent<AudioSource> ();
 
-				//SushiObj = new List<GameObject> ();
-
+				SushiObj = new List<GameObject> ();
 				if(PlayerStatus.SushibarSlotLV == 0){
 					SushiSetCount = 0;
 				}if(PlayerStatus.SushibarSlotLV == 1){
@@ -65,17 +66,20 @@ namespace Scripts{
 			}
 
 			void Update(){
+
 				counter -= Time.deltaTime;
 				counterb -= Time.deltaTime;
 				counterC -= Time.deltaTime;
 				counterD -= Time.deltaTime;
 				counterE -= Time.deltaTime;
 
+
 				_uiSushiCoolB [0].fillAmount = counter;
 				_uiSushiCoolB [1].fillAmount = counterb;
 				_uiSushiCoolB [2].fillAmount = counterC;
 				_uiSushiCoolB [3].fillAmount = counterD;
 				_uiSushiCoolB [4].fillAmount = counterE;
+
 			}
 
 			public void ReSushiCount(){
@@ -83,7 +87,13 @@ namespace Scripts{
 
 				for(int i = 0; i < SushiCount; i++){
 					SushiObj [i].transform.position = SushiPos [i].position;
-					_myAudio.PlayOneShot (_myClipSushi);
+					_myAudio.PlayOneShot (_myClipSushi[0]);
+				}
+			}
+
+			public void PosSushi(){
+				for(int i = 0; i < SushiCount; i++){
+					SushiObj [i].transform.position = SushiPos[i].transform.position;
 				}
 			}
 
@@ -92,12 +102,13 @@ namespace Scripts{
 				if(Sushia != null){
 					if(counter <= 0 && SushiCount <= SushiSetCount){
 						if (SushiCount < SushiPos.Length) {
-							_myAudio.Play ();
+							_myAudio.PlayOneShot (_myClipSushi[0]);
 							sushi = Instantiate (Sushia [0], SushiPos[SushiCount].transform.position, Quaternion.identity);		
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
 							sushi.name = Sushia [0].name;
 							Debug.Log (sushi.name);
+							//counter = 1;
 							if(_multiSushiA == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
 									Debug.Log ("Speed LV 1");
@@ -134,13 +145,15 @@ namespace Scripts{
 
 				if(Sushia != null){
 					if (counterb <= 0 && SushiCount <= SushiSetCount) {
+						//Debug.Log ("SushiB time 0 ");
 						if (SushiCount < SushiPos.Length) {
-							_myAudio.Play ();
+							_myAudio.PlayOneShot (_myClipSushi[0]);
 							sushi = Instantiate (Sushia [1], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
 							sushi.name = Sushia [1].name;
 							Debug.Log (sushi.name);
+							//counterb = 1;
 							if(_multiSushiB == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
 									Debug.Log ("Speed LV 1");
@@ -177,13 +190,15 @@ namespace Scripts{
 
 				if (Sushia != null) {
 					if (counterC <= 0 && SushiCount <= SushiSetCount) {
+						//Debug.Log ("SushiC time 0 ");
 						if (SushiCount < SushiPos.Length) {
-							_myAudio.Play ();
+							_myAudio.PlayOneShot (_myClipSushi[0]);
 							sushi = Instantiate (Sushia [2], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
 							sushi.name = Sushia [2].name;
 							Debug.Log (sushi.name);
+							//counterC = 1;
 							if(_multiSushiC == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
 									Debug.Log ("Speed LV 1");
@@ -221,12 +236,13 @@ namespace Scripts{
 				if (Sushia != null) {
 					if (counterD <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
-							_myAudio.Play ();
+							_myAudio.PlayOneShot (_myClipSushi[0]);
 							sushi = Instantiate (Sushia [3], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
 							sushi.name = Sushia [3].name;
 							Debug.Log (sushi.name);
+							//counterD = 1;
 							if(_multiSushiD == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
 									Debug.Log ("Speed LV 1");
@@ -264,12 +280,13 @@ namespace Scripts{
 				if (Sushia != null) {
 					if (counterE <= 0 && SushiCount <= SushiSetCount) {
 						if (SushiCount < SushiPos.Length) {
-							_myAudio.Play ();
+							_myAudio.PlayOneShot (_myClipSushi[0]);
 							sushi = Instantiate (Sushia [4], SushiPos[SushiCount].transform.position, Quaternion.identity);
 							SushiObj.Add (sushi.gameObject);
 							SushiCount++;
 							sushi.name = Sushia [4].name;
 							Debug.Log (sushi.name);
+							//counterE = 1;
 							if(_multiSushiE == _multi){
 								if(PlayerStatus.CookingSpeedLV == 1){
 									Debug.Log ("Speed LV 1");
