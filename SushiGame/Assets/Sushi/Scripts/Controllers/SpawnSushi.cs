@@ -49,8 +49,9 @@ public class SpawnSushi : MonoBehaviour {
 					SushiSetCount = 2;
 				}if(PlayerStatus.SushibarSlotLV == 3){
 					SushiSetCount = 3;
-				}if(PlayerStatus.SushibarSlotLV == 4){
+				}if(PlayerStatus.SushibarSlotLV >= 4){
 					SushiSetCount = 4;
+					Debug.Log ("Count" + SushiSetCount);
 				}
 
 				if(PlayerStatus.MultiCookingLV == 0){

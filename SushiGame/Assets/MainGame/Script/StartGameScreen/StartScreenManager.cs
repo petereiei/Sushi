@@ -1,43 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using LitJson;
 using UnityEngine.Audio;
 
 public class StartScreenManager : MonoBehaviour {
 
+	[SerializeField]
+	AudioSource _bgm;
+
+	[SerializeField]
 	AudioSource _myAudio;
+
+	[SerializeField]
+	Button buttonStart;
+
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
 	public AudioClip _myClip;
-	public float _time = 1f;
-	public bool _mytime = false;
 
 	void Start (){
-		_myAudio = GetComponent<AudioSource> ();
-	}
-
-	void Update(){
-		if(_mytime == true){
-			_time -= Time.deltaTime;
-		}
-		if(_time <= 0){
-			StartGame ();
-		}
+		//_myAudio = GetComponent<AudioSource> ();
+		_bgmGroup.audioMixer.SetFloat ("BGMVolume", 0.0f);
 	}
 
 
 
     public void GameStartOnClick()
     {
-		myPlay ();
+		buttonStart.interactable = false;
+		StartCoroutine (StartGame ());
     }
 
-	void myPlay(){
+	IEnumerator StartGame()
+	{
+		float lerp = 0;
+		float _time = 1f;
 		_myAudio.PlayOneShot (_myClip);
-		_mytime = true;
-	}
-
-	public void StartGame(){
+		while (_time > 0) {
+			
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		SceneManager.LoadScene("MainRestaurantManage");
 		Load.LoadData();
 	}

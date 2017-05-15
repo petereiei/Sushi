@@ -2,46 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class BackBtn : MonoBehaviour {
 
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
 	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
+
 	public AudioClip _myClipSushi;
 
-	private float _mytimeback = 1f;
-	private bool _mybacktohome = false;
-
 	void Start (){
-		_myAudio = GetComponent<AudioSource> ();
 	}
 
 	void Update(){
-		if(_mybacktohome == true){
-			_mytimeback -= Time.deltaTime;
-		}
-
-		if(_mytimeback <= 0){
-			myBackToHomeOnclick ();
-		}
 	}
 
-	void myBackToHomeOnclick(){
+	IEnumerator myBackToHomeOnclick(){
+		float lerp = 0;
+		float _time = 1f;
+		_myAudio.PlayOneShot (_myClipSushi);
+		while (_time > 0) {
+
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		TablePopUpUI.TableUIShow = false;
 		BarPopUpUI.BarUIShow = false;
 
 		Save.SaveData();
 
 		SceneManager.LoadScene("MainRestaurantManage");
-		_mybacktohome = false;
 	}
 
 	public void BackToHomeOnclick()
     {
-		myBackToHome ();
-    }
 
-	void myBackToHome(){
-		_myAudio.Play ();
-		_mybacktohome = true;
-	}
+		buttonOnclick[9].interactable = false;
+		buttonOnclick[8].interactable = false;
+		buttonOnclick[7].interactable = false;
+		buttonOnclick[6].interactable = false;
+		buttonOnclick[5].interactable = false;
+		buttonOnclick[4].interactable = false;
+		buttonOnclick[3].interactable = false;
+		buttonOnclick[2].interactable = false;
+		buttonOnclick[1].interactable = false;
+		buttonOnclick[0].interactable = false;
+		StartCoroutine (myBackToHomeOnclick ());
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public static class PlayerStatus  {
 
     //Money
-    public static int Money = 99999;
+    public static int Money = 2000;
 
     //FurnitureStatus
     public static int SushibarSlotLV = 0;

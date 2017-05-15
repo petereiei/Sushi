@@ -48,7 +48,7 @@ namespace Scripts{
 					SushiSetCount = 2;
 				}if(PlayerStatus.SushibarSlotLV == 3){
 					SushiSetCount = 3;
-				}if(PlayerStatus.SushibarSlotLV == 4){
+				}if(PlayerStatus.SushibarSlotLV >= 4){
 					SushiSetCount = 4;
 				}
 

@@ -2,8 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Scripts.Controllers;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+
 
 public class CloseShop : MonoBehaviour {
+
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
+	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
 
     public GameObject UIpopup;
 	public GameObject Camera;
@@ -12,9 +24,7 @@ public class CloseShop : MonoBehaviour {
     private bool UIpop = false;
 
 
-	AudioSource _myAudio;
 	public AudioClip _myClip;
-	private bool _myClose = false;
 
 	private float _timeClose = 1f;
 
@@ -24,9 +34,6 @@ public class CloseShop : MonoBehaviour {
 	}
 
 	void Update(){
-		if(_myClose == true){
-			_timeClose -= Time.deltaTime;
-		}
 
 		if(_timeClose <= 0){
 			myCloseYesOnclick ();
@@ -51,22 +58,33 @@ public class CloseShop : MonoBehaviour {
         
     }
 
-	void myCloseYesOnclick(){
+	IEnumerator myCloseYesOnclick(){
+		float lerp = 0;
+		float _time = 1f;
+		_myAudio.PlayOneShot (_myClip);
+		while (_time > 0) {
+
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		Application.LoadLevel("MainRestaurantManage");
 		UIpop = false;
 		UIpopup.SetActive(false);
 		Save.SaveData();
+
+		buttonOnclick[1].interactable = true;
+		buttonOnclick[0].interactable = true;
 	}
 
     public void CloseYesOnclick()
     {
-		myClose ();
+		buttonOnclick[1].interactable = false;
+		buttonOnclick[0].interactable = false;
+		StartCoroutine (myCloseYesOnclick ());
     }
-
-	void myClose(){
-		_myAudio.Play ();
-		_myClose = true;
-	}
 
 
     public void CloseNoOnclick()

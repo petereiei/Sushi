@@ -2,8 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class RecipeUnlockManage : MonoBehaviour {
+
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
+	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
+
 
     public GameObject Sushi6Text;
     public GameObject Sushi7Text;
@@ -35,7 +46,6 @@ public class RecipeUnlockManage : MonoBehaviour {
     public GameObject RecipeHeadText;
     public GameObject RecipeCostText;
 
-	public AudioSource _myAudio;
 	public AudioClip _myClipSushi;
 
     private Text RecipeHeadTextSet;
@@ -46,8 +56,6 @@ public class RecipeUnlockManage : MonoBehaviour {
     private bool RecipePopUpShow = false;
     
     void Start () {
-
-		_myAudio = GetComponent<AudioSource> ();
 
         Sushi6TextSet = Sushi6Text.GetComponent<Text>();
         Sushi7TextSet = Sushi7Text.GetComponent<Text>();

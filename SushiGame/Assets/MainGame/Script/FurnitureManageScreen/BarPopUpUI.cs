@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class BarPopUpUI : MonoBehaviour {
 
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
+	AudioSource _bgm;
+
+	[SerializeField]
+	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
     public GameObject Black;
     public GameObject ConfirmBtn;
 
@@ -19,17 +31,10 @@ public class BarPopUpUI : MonoBehaviour {
     private int NextLv = 0;
     private int NowCost;
 
-	AudioSource _myAudio;
 	public AudioClip _myClipSushi;
-	private bool _myCancel = false;
-	private float _myCancelf = 1f;
-
-	private bool _myConfirm = false;
-	private float _myConfirmC = 1f;
 
 	private void Start()
     {
-		_myAudio = GetComponent<AudioSource> ();
         BarTextSet = BarText.GetComponent<Text>();
         BarPriceTextSet = BarPriceText.GetComponent<Text>();
     }
@@ -74,25 +79,24 @@ public class BarPopUpUI : MonoBehaviour {
             BarTextSet.text = "You have Max SushibarSlot";
         }
 
-
-		if(_myCancel == true){
-			_myCancelf -= Time.deltaTime;
-		}
-		if(_myCancelf <= 0f){
-			myCancelOnclick ();
-		}if(_myConfirm == true){
-			_myConfirmC -= Time.deltaTime;
-		}
-		if(_myConfirmC <= 0f){
-			myConfirmOnclick ();
-		}
-
     }
 
-	public void myConfirmOnclick(){
+	public IEnumerator myConfirmOnclick(){
 
+		float lerp = 0;
+		float _time = 1f;
+		_myAudio.PlayOneShot (_myClipSushi);
+		while (_time > 0) {
+
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		if(PlayerStatus.Money >= NowCost)
 		{
+			_myAudio.PlayOneShot (_myClipSushi);
 			PlayerStatus.SushibarSlotLV += 1;
 			PlayerStatus.Money -= NowCost;
 			NowLv = 0;
@@ -101,41 +105,52 @@ public class BarPopUpUI : MonoBehaviour {
 			Save.SaveData();
 			Black.SetActive(false);
 			this.gameObject.SetActive(false);
-			_myConfirm = false;
-			_myConfirmC = 1f;
 
 		}
 		else
 		{
 			BarPriceTextSet.text = "Not enough money";
 		}
+		buttonOnclick[1].interactable = true;
+		buttonOnclick [0].interactable = true;
 	}
 
     public void ConfirmOnclick()
     {
-		MyConfirmOnclick ();
-		_myConfirm = true;
+		buttonOnclick[1].interactable = false;
+		buttonOnclick [0].interactable = false;
+		StartCoroutine (myConfirmOnclick ());
 
     }
 
-	public void myCancelOnclick(){
+	public IEnumerator myCancelOnclick(){
+		float lerp = 0;
+		float _time = 1f;
+		_myAudio.PlayOneShot (_myClipSushi);
+		while (_time > 0) {
+
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		NowLv = 0;
 		NextLv = 0;
 		BarUIShow = false;
 		Black.SetActive(false);
 		this.gameObject.SetActive(false);
-		_myCancel = false;
-		_myCancelf = 1f;
+		buttonOnclick[1].interactable = true;
+		buttonOnclick [0].interactable = true;
+	
+
 	}
 
     public void CancelOnclick()
     {
-		_myAudio.PlayOneShot (_myClipSushi);
-		_myCancel = true;
+		buttonOnclick[1].interactable = false;
+		buttonOnclick [0].interactable = false;
+		StartCoroutine (myCancelOnclick ());
    }
-
-	public void MyConfirmOnclick(){
-		_myAudio.Play ();
-	}
 		
 }

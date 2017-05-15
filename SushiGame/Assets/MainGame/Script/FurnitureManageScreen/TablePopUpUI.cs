@@ -2,8 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class TablePopUpUI : MonoBehaviour {
+
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
+	AudioSource _bgm;
+
+	[SerializeField]
+	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
 
     public GameObject Black;
     public GameObject TablePriceText;
@@ -17,7 +30,6 @@ public class TablePopUpUI : MonoBehaviour {
 
     public static bool TableUIShow = false;
 
-	AudioSource _myAudio;
 	public AudioClip _myClipSushi;
 	private bool _myCancel = false;
 	private float _myCancelf = 1f;
@@ -41,23 +53,27 @@ public class TablePopUpUI : MonoBehaviour {
 		if(_myCancelf <= 0f){
 			myCancel ();
 		}
-		if(_myConfirm == true){
-			_myConfirmC -= Time.deltaTime;
-		}
-		if(_myConfirmC <= 0f){
-			MyConfirmOnclick ();
-		}
 	}
 
     public void ConfirmOnclick()
     {
-		
-		MyConfirmOn ();
-		_myConfirm = true;
+		buttonOnclick[1].interactable = false;
+		buttonOnclick [0].interactable = false;
+		StartCoroutine (MyConfirmOnclick ());
     }
 
-	public void MyConfirmOnclick(){
-		
+	public IEnumerator MyConfirmOnclick(){
+		float lerp = 0;
+		float _time = 1f;
+		_myAudio.PlayOneShot (_myClipSushi);
+		while (_time > 0) {
+
+			lerp = _time / 1f;
+			_bgmGroup.audioMixer.SetFloat ("BGMVolume", Mathf.Lerp(-80.0f, 0.0f, lerp));
+			yield return null;
+			_time -= Time.deltaTime;
+		}
+		yield return null;
 		if(PlayerStatus.Money >= GameData.TableCost)
 		{
 			if (TableNumber == 0)
@@ -128,6 +144,9 @@ public class TablePopUpUI : MonoBehaviour {
 		{
 			//TablePriceTextSet.text = "Not enough Money";
 		}
+
+		buttonOnclick[1].interactable = true;
+		buttonOnclick [0].interactable = true;
 	}
 
 	void myCancel(){
@@ -136,10 +155,14 @@ public class TablePopUpUI : MonoBehaviour {
 		this.gameObject.SetActive(false);
 		_myCancel = false;
 		_myCancelf = 1f;
+		buttonOnclick[1].interactable = true;
+		buttonOnclick [0].interactable = true;
 	}
 
     public void CancelOnclick()
     {
+		buttonOnclick[1].interactable = false;
+		buttonOnclick [0].interactable = false;
 		_myAudio.PlayOneShot (_myClipSushi);
 		_myCancel = true;
     }

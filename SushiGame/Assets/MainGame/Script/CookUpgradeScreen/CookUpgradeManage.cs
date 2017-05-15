@@ -2,8 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CookUpgradeManage : MonoBehaviour {
+
+	[SerializeField]
+	AudioMixerGroup _bgmGroup;
+
+	[SerializeField]
+	AudioSource _myAudio;
+
+	[SerializeField]
+	Button[] buttonOnclick;
 
 
     public GameObject Black;
@@ -34,13 +44,10 @@ public class CookUpgradeManage : MonoBehaviour {
 
     private bool PopUpShow = false;
 
-	AudioSource _myAudio;
 	public AudioClip _myClipSushi;
 
 
     void Start () {
-
-		_myAudio = GetComponent<AudioSource> ();
 		
        SetTextCS = SkillTextCS.GetComponent<Text>();
        
@@ -94,21 +101,25 @@ public class CookUpgradeManage : MonoBehaviour {
             }
             if (PlayerStatus.CookingSpeedLV == 1)
             {
+
 				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV2Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 2)
             {
+				
 				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV3Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 3)
             {
+
 				_myAudio.Play ();
                 CostTextSet.text = "Cost " + GameData.CookingSpeedLV4Cost;
             }
             if (PlayerStatus.CookingSpeedLV == 4)
             {
+
 				_myAudio.Play ();
                 CostTextSet.text = "MaxLV";
             }

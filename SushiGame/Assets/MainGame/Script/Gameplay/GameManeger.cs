@@ -20,6 +20,7 @@ public class GameManeger : MonoBehaviour {
 	private int _Satisfyup;
 
     public int income;
+	private int myincome2;
 
     public static bool TimeUp = false;
 
@@ -87,6 +88,8 @@ public class GameManeger : MonoBehaviour {
             CustomerIncome();
         }
 
+
+
 	}
 
     public void timepause()
@@ -115,7 +118,12 @@ public class GameManeger : MonoBehaviour {
 		
     public void CustomerIncome()
     {
-        income += 100;
+		if (MainHomeManager.SetSelect == 2) {
+			myincome2 = 25;
+		} else {
+			myincome2 = 0;
+		}
+		income += myincome2 + 100;
         incomeText.text = income.ToString();
         Debug.Log("GetIncome");
     }
